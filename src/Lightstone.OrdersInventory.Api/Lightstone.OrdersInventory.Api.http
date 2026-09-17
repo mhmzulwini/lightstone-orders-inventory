@@ -1,0 +1,46 @@
+@host = http://localhost:5034
+
+GET {{host}}/health/ready
+Accept: application/json
+
+###
+
+GET {{host}}/api/products
+Accept: application/json
+
+###
+
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "sku": "SKU-004",
+  "name": "Laptop Stand",
+  "price": 39.99,
+  "initial_stock": 10
+}
+
+###
+
+POST {{host}}/api/products/SKU-001/stock-adjustments
+Content-Type: application/json
+
+{ "quantity_change": 5 }
+
+###
+
+POST {{host}}/api/orders
+Content-Type: application/json
+
+{
+  "external_order_id": "ext-10001",
+  "placed_at": "2026-09-16T12:34:56Z",
+  "items": [
+    { "sku": "SKU-001", "qty": 2, "unit_price": 24.99 }
+  ]
+}
+
+###
+
+GET {{host}}/api/sales/daily?startDate=2026-09-01&endDate=2026-09-30
+Accept: application/json
