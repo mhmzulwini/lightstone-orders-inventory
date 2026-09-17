@@ -95,6 +95,7 @@ Each integration test creates an isolated temporary database and removes it afte
 - [`SOLUTION.md`](SOLUTION.md): architecture and trade-offs
 - [`AI-USAGE.md`](AI-USAGE.md): AI prompts and how AI was used
 - [`VIDEO-GUIDE.md`](VIDEO-GUIDE.md): suggested demo flow
+- [`VIDEO-SCRIPT.md`](VIDEO-SCRIPT.md): timed rehearsal script and exact demo requests
 
 ## Cleanup
 
